@@ -4,19 +4,35 @@
 {% endblock%}
      {% block content %}
  <!-- Popular info section  -->
- <ul>
+ <div class="container">
+ <div class="row">
+  <div class="col-md-4">
     {% for source in sources %}
     <a href="/article/{{source.id}}">
       <p class="text-capitalize text-muted">{{source.id}}</p>
     </a>
     {% endfor %}
-
-    {% for headlines in headlines %}
-
-   
-        <h5 class="">{{headlines.author}}</h5>
-        <p class="">{{headlines.description}}</p>
-
-    {% endfor %}
-        
+  </div>
+  <div class="col-md-8">
+    <h1 align="center"> HEADLINE NEWS </h3>
+      {% for headlines in headlines %}
+  
+      <div class="card">
+        <img class="card" src="{{headlines.image}}" alt="Card image cap" size="100px180">
+        <div class="card-body">
+          <h5 class="card-title">{{headlines.author}}</h5>
+          <p class="card-text">{{headlines.description}}</p>
+          <a href="{{headlines.url}}">
+            <p class="card-text">Click here for more details!</p>
+          </a>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Publish date:{{headlines.time}}</small>
+        </div>
+      </div>
+      {% endfor %}
+  </div>
+ </div>
+</div>
+ <ul>     
 {% endblock%}
