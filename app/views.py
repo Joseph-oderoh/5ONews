@@ -1,6 +1,6 @@
-from flask import render_template
 from app import app
-from .request import article_source, get_source
+from flask import render_template
+from .request import article_source, get_headlines, get_source
 
 
 # Views
@@ -12,7 +12,8 @@ def index():
     '''
     # Getting popular movie
     source= get_source()
-    return render_template('index.html',sources=source)
+    headlines = get_headlines()
+    return render_template('index.html',sources=source,  headlines = headlines)
 
 
 @app.route('/article/<id>')

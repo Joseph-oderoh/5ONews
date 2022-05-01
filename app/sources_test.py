@@ -1,6 +1,6 @@
 
 import unittest
-from app.models import Source
+from .models import Source
 
 class SourceTest(unittest.TestCase):
     '''
@@ -18,3 +18,6 @@ class SourceTest(unittest.TestCase):
         Test to check creation of new article Source instance
         '''
         self.assertTrue(isinstance(self.new_source,Source))
+
+if __name__ == '__main__':
+    unittest.main()

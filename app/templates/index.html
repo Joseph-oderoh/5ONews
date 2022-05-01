@@ -10,5 +10,13 @@
       <p class="text-capitalize text-muted">{{source.id}}</p>
     </a>
     {% endfor %}
+
+    {% for headlines in headlines %}
+
+   
+        <h5 class="">{{headlines.author}}</h5>
+        <p class="">{{headlines.description}}</p>
+
+    {% endfor %}
         
 {% endblock%}

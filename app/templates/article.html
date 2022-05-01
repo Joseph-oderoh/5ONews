@@ -1,1 +1,22 @@
-<h1> 5ONews {{ id }} </h1>
+{% extends 'base.html'%}
+{% block head%}
+{{super()}}
+{% endblock%}
+{% block content%}
+{% for article in articles %}
+
+      <div class="card">
+        <img class="card" src="{{article.image}}" alt="Card image cap" >
+        <div class="card-body">
+          <h5 class="card-title">{{article.author}}</h5>
+          <p class="card-text">{{article.description}}</p>
+          <a href="{{article.url}}">
+            <p class="card-text">Get more hear!</p>
+          </a>
+        </div>
+        <div class="card-footer">
+          <small class="text-muted">Article date:{{article.publishedAt}}</small>
+        </div>
+      </div>
+      {% endfor %}
+{% endblock%}
