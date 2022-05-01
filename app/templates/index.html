@@ -1,4 +1,7 @@
-{% extends 'bootstrap/base.html'%}
+{% extends 'base.html'%}
+{% block head%}
+{{super()}}
+{% endblock%}
      {% block content %}
  <!-- Popular info section  -->
  <ul>
@@ -8,4 +11,4 @@
     </a>
     {% endfor %}
         
-    {% endblock%}
+{% endblock%}

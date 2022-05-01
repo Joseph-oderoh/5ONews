@@ -1,10 +1,11 @@
 import urllib.request,json
 from app import app
-from .models import Source
+from .models import Article, Source,Headlines
 
 
 api_key = app.config['NEWS_API_KEY']
 source_url= app.config['NEWS_API_SOURCE_URL']
+h_api_url = app.config['H_API_URL']
 
 
 
@@ -40,8 +41,44 @@ def process_results(source_list):
         name = source_item.get('name')
         description = source_item.get('description')
         url = source_item.get('url')
+        
         if id:
             source_object = Source(id,name,description,url)
             source_results.append(source_object)
 
     return source_results
+
+def article_source(id):
+    article_source_url = 'https://newsapi.org/v2/top-headlines?sources={}&apiKey={}'.format(id,api_key)
+    print(article_source_url)
+    with urllib.request.urlopen(article_source_url) as url:
+        article_source_data = url.read()
+        article_source_response = json.loads(article_source_data)
+
+        article_source_results = None
+
+        if article_source_response['articles']:
+            article_source_list = article_source_response['articles']
+            article_source_results = process_articles_results(article_source_list)
+
+
+    return article_source_results
+
+def process_articles_results(news):
+    '''
+    function that processes the json files of articles from the api key
+    '''
+    article_source_results = []
+    for article in news:
+        author = article.get('author')
+        description = article.get('description')
+        time = article.get('publishedAt')
+        url = article.get('urlToImage')
+        image = article.get('url')
+        title = article.get ('title')
+
+        if url:
+            article_objects = Article(author,description,time,image,url,title)
+            article_source_results.append(article_objects)
+
+    return 
