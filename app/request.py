@@ -1,41 +1,47 @@
-from unicodedata import category
-from app import app
 import urllib.request,json
-from .models import article
-#Getting api key
+from app import app
+from .models import Source
+
+
 api_key = app.config['NEWS_API_KEY']
+source_url= app.config['NEWS_API_SOURCE_URL']
 
-#Getting the news base url
-base_url = app.config['NEWS_ARTICAL_BASE_URL']
-def get_articles(article):
+
+
+def get_source():
     '''
-    Function that gets the json response to our url request
+    Function that gets the json response to url request
     '''
-    get_articles_url = base_url.format(category,api_key)
-    with urllib.request.urlopen(get_articles_url) as url:
-        get_articles_data = url.read()
-        get_articles_response =json.loads(get_articles_data)
-        article_results = None
+    get_source_url= source_url.format(api_key)
+    # print(get_source_url)
+    with urllib.request.urlopen(get_source_url) as url:
+        get_sources_data = url.read()
+        get_sources_response = json.loads(get_sources_data)
 
-        if get_articles_response['results']:
-           article_results_list = get_articles_response['results']
-           article_results = process_results(article_results_list)
+        source_results = None
 
+        if get_sources_response['sources']:
+            source_results_list = get_sources_response['sources']
+            source_results = process_results(source_results_list)
 
-    return article_results
-def process_results(article_list):
-    movie_results = []
-    for article_item in article_list:
-        source = article_item.get('source')
-        author = article_item.get('author')
-        title = article_item.get('title')
-        overview = article_item.get('description')
-        poster = article_item.get('poster_path')
-        vote_average = article_item.get('vote_average')
-        vote_count = article_item.get('vote_count')
+    return source_results
 
-        if poster:
-            article_object = article(source,author,title,overview,poster,vote_average,vote_count)
-            article_results.append(article_object)
+def process_results(source_list):
+    '''
+    function to process results and transform them to a list of objects
+    Args:
+        source_list:dictionary cotaining source details
+    Returns:
+        source_results: A list of source objects
+    '''
+    source_results = []
+    for source_item in source_list:
+        id = source_item.get('id')
+        name = source_item.get('name')
+        description = source_item.get('description')
+        url = source_item.get('url')
+        if id:
+            source_object = Source(id,name,description,url)
+            source_results.append(source_object)
 
-    return article_results
+    return source_results

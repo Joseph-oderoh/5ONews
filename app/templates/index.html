@@ -1,8 +1,11 @@
-{% extends 'base.html'%}
-{% block head%}
-{{super()}}
-{% endblock%}
-
-{% block content%}
-<h1 class="text-center"> Welcome to the 5ONews </h1>
-{% endblock%}
+{% extends 'bootstrap/base.html'%}
+     {% block content %}
+ <!-- Popular info section  -->
+ <ul>
+    {% for source in sources %}
+    <a href="/article/{{source.id}}">
+      <p class="text-capitalize text-muted">{{source.id}}</p>
+    </a>
+    {% endfor %}
+        
+    {% endblock%}
