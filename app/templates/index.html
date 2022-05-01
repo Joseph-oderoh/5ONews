@@ -2,6 +2,12 @@
 {% block head%}
 {{super()}}
 {% endblock%}
+{% block styles%}
+ {{super()}}
+ {{ super() }}
+ <link rel="stylesheet" href="{{url_for('static',filename='CSS/style.css')}}">
+{% endblock%}
+
      {% block content %}
  <!-- Popular info section  -->
  <div class="container">
@@ -14,6 +20,7 @@
     {% endfor %}
   </div>
   <div class="col-md-8">
+    
     <h1 align="center"> HEADLINE NEWS </h3>
       {% for headlines in headlines %}
   

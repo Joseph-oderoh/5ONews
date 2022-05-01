@@ -5,7 +5,7 @@ from .request import article_source, get_headlines, get_source
 
 # Views
 @app.route('/')
-def index():
+def HOME():
 
     '''
     View root page function that returns the index page and its data

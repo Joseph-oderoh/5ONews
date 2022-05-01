@@ -6,17 +6,27 @@
 {% for article in articles %}
 
       <div class="container">
+    </div class="row">
+        </div class="col-md-6">
         <img class="card" src="{{article.image}}" alt="Card image cap" >
-        <div class="card-body">
-          <h5 class="card-title">{{article.author}}</h5>
-          <p class="card-text">{{article.description}}</p>
-          <a href="{{article.url}}">
-            <p class="card-text">Get more hear!</p>
-          </a>
+        <h5 class="card-title">{{article.author}}</h5>
         </div>
-        <div class="card-footer">
-          <small class="text-muted">Article date:{{article.publishedAt}}</small>
-        </div>
+    </div class="col-md-6">
+    <div class="card-body">
+       
+        <p class="card-text">{{article.description}}</p>
+        <a href="{{article.url}}">
+          <p class="card-text">Get more hear!</p>
+        </a>
+      </div>
+      <div class="card-footer">
+        <small class="text-muted">Article date:{{article.publishedAt}}</small>
+      </div>
+</div>
+       
+  
+    </div>
+      
       </div>
       {% endfor %}
 {% endblock%}
