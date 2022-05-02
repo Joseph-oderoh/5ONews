@@ -11,8 +11,8 @@
 {% for article in articles %}
   <div class="container">
         <img src="{{article.image}}" height="400" width="500">
-        <p>{{article.description}}</p>
-          <h5>{{article.author}}</h5>
+        <h5><strong>Title:</strong>{{article.title}}</h5>
+        <p><strong>Description:</strong>{{article.description}}</p>
             <h4>{{article.language}}</h4>
            
           <a href="{{article.url}}"><p>Get more!</p></a>
