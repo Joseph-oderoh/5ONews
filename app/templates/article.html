@@ -9,22 +9,15 @@
 {% block content%}
 <h1 class="text-center text-info">~Articles~</h1>
 {% for article in articles %}
-
   <div class="container">
-    </div class="row">
-      </div class="col-md-6">
         <img src="{{article.image}}" height="400" width="500">
         <p>{{article.description}}</p>
-      </div>
-      </div class="col-md-6">
           <h5>{{article.author}}</h5>
             <h4>{{article.language}}</h4>
            
           <a href="{{article.url}}"><p>Get more!</p></a>
           
         <p><strong>Article date</strong>:{{article.publishedAt}}</p>
-      </div>
-    </div>
   </div>
       {% endfor %}
 {% endblock%}

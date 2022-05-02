@@ -1,0 +1,10 @@
+.container{
+    background-color: wheat;
+    height: fit-content;
+    font-family: poppins;
+    border: 2px solid black;
+    margin: 30px auto;
+    padding: 20px;
+    border-radius: 45px;
+    
+}
