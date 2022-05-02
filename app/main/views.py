@@ -1,10 +1,10 @@
-from app import app
+from . import main
 from flask import render_template
-from .request import article_source, get_headlines, get_source
+from ..request import article_source, get_headlines, get_source
 
 
 # Views
-@app.route('/')
+@main.route('/')
 def HOME():
 
     '''
@@ -16,7 +16,7 @@ def HOME():
     return render_template('index.html',sources=source,  headlines = headlines)
 
 
-@app.route('/article/<id>')
+@main.route('/article/<id>')
 def article(id):
 
     '''
