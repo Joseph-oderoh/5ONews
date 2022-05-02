@@ -1,15 +1,23 @@
 # 5ONews
 
 
-#### version 3.5.0 
+#### version 5.0 
 
 #### By Joseph Kenedy Oderoh
 
 ## Description
-This Project is to help us practice and understand better the use of JQuery CSS and bootstrap learned so far
+This is news app where one can scroll through and get latest news updates from different sources
+
+## Table of Content
++ [Description](#description)
++ [Installation Requirement](#Installation)
++ [Technology Used](#technology-used)
++ [Reference](#reference)
++ [Authors Info](#author-Info)
+
 ## Setup/Installation Requirements
 * You will first need to get into a browser or access to one most prefered chrome browser. 
-* Navigate to GitHub locate the live link  on the About section .
+* Navigate to GitHub locate the live link  on the About section  https://news5o.herokuapp.com/
 * Next click on the Delani live link to get a glimpse on what we have to offer.
 * This will direct you to a new tab displaying the details of the portforlio.
 
@@ -23,8 +31,14 @@ This Project is to help us practice and understand better the use of JQuery CSS 
 * This may be sorted in the near future as we progress 
 
 ## Technologies Used
-For this project I use technologies such as HTML and CSS bootstrap jquery this were used to style and make the page more interactive
-
+* For this project I use technologies such as Python
+* Python 3.8.10
+* Flask
+* Heroku - For deployment
+## reference
+* stackoverflow 
+* YOutube
+* python Docs
 ### License
 ## Support and contacts details
 You can reach me:
