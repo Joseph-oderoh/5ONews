@@ -20,18 +20,22 @@
     {% endfor %}
   </div>
   <div class="col-md-8">
-    
-    <h1 align="center"> HEADLINE NEWS </h3>
+    <h1 class="text-center class-info"> ~HEADLINE NEWS~ </h3>
+   
       {% for headlines in headlines %}
-  
+      
       <div class="card HEADLINE">
+        
         <img class="card" src="{{headlines.image}}" alt="Card image cap" size="50px100">
         <div class="card-body">
           <h5 class="card-title">{{headlines.author}}</h5>
           <p class="card-text">{{headlines.description}}</p>
+          <button class="btn btn-success">
           <a href="{{headlines.url}}">
-            <p class="card-text">Click here for more details!</p>
+            <p class="card-text">Click More!</p>
           </a>
+        </button>
+          <h4>{{headlines.language}}
         </div>
         <div class="card-footer">
           <small class="text-muted">Publish date:{{headlines.publishedAt}}</small>
