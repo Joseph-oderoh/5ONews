@@ -2,9 +2,23 @@
     background-color: rgba(128, 128, 128, 0.481);
     color: black;
     height: fit-content;
+    
 }
 a{
     text-decoration: none;
     font-weight: 800;
     color: black;
+}
+.HEADLINE{
+    border:  2px solid black;
+}
+p{
+    font-family: serif;
+    color: aqua;
+}
+body{
+    background-color: rgba(0, 0, 0, 0.552);
+}
+h1{
+    font-family: Eczar;
 }

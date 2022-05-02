@@ -24,8 +24,8 @@
     <h1 align="center"> HEADLINE NEWS </h3>
       {% for headlines in headlines %}
   
-      <div class="card">
-        <img class="card" src="{{headlines.image}}" alt="Card image cap" size="100px180">
+      <div class="card HEADLINE">
+        <img class="card" src="{{headlines.image}}" alt="Card image cap" size="50px100">
         <div class="card-body">
           <h5 class="card-title">{{headlines.author}}</h5>
           <p class="card-text">{{headlines.description}}</p>
@@ -34,7 +34,7 @@
           </a>
         </div>
         <div class="card-footer">
-          <small class="text-muted">Publish date:{{headlines.time}}</small>
+          <small class="text-muted">Publish date:{{headlines.publishedAt}}</small>
         </div>
       </div>
       {% endfor %}
