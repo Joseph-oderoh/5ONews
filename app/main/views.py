@@ -1,5 +1,5 @@
 from . import main
-from flask import render_template
+from flask import render_template,request,redirect
 from ..request import article_source, get_headlines, get_source
 
 
@@ -11,9 +11,9 @@ def HOME():
     View root page function that returns the index page and its data
     '''
     # Getting popular movie
-    source= get_source()
+    sources= get_source()
     headlines = get_headlines()
-    return render_template('index.html',sources=source,  headlines = headlines)
+    return render_template('index.html',sources=sources,  headlines = headlines)
 
 
 @main.route('/article/<id>')
